@@ -8128,6 +8128,160 @@ desc: Cooldown 100 turns.
 #dice:$B
 #expr:B:PLAYER_LEVEL: ...
 
+
+############### CLASS TEMPLATE for Tidemaster
+name:Tidemaster
+color:D
+skill-disarm-phys:30:10
+skill-disarm-magic:35:12
+skill-device:36:13
+skill-save:30:9
+skill-stealth:2:0
+skill-search:10:12
+skill-melee:10:15
+skill-shoot:50:25
+skill-dig:0:0
+hitdie:1
+max-attacks:4
+min-weight:35
+strength-multiplier:3
+equip:light:Wooden Torch:1:3:none
+equip:sword:Dagger:1:1:none
+equip:bow:Short Bow:1:1:birth_no_recall
+equip:arrow:Old Arrow:30:40:birth_no_recall
+equip:arrow:Old Arrow:30:40:birth_no_recall
+equip:scroll:Word of Recall (rugged):2:2:birth_no_recall
+equip:scroll:Satisfy Hunger (tattered):2:2:birth_no_recall
+equip:scroll:Phase Door:3:4:birth_no_recall
+equip:potion:Cure Light Wounds:2:3:birth_no_recall
+value:0:STR[-3]
+value:0:INT[2]
+value:0:WIL[1]
+value:0:CON[-2]
+value:0:CHR[-4]
+value:0:RES_DARK[1]
+value:0:RES_WATER[1]
+player-flags:0:ZERO_FAIL | CHOOSE_SPELLS | UNLIGHT | CAN_SWIM
+title:Rookie
+title:Initiate
+title:Neophyte
+title:Novice
+title:Apprentice
+title:Journeyman
+title:Expert
+title:Adept
+title:Master
+title:Grandmaster
+
+magic:1:300:5
+
+book:shadow book:town:[Shadows for Beginners]:8:shadow
+book-graphics:?:s
+book-properties:1:30:25
+book-alloc:40:1 to 100
+book-desc:A standard shadow book with a few rituals.
+equip:shadow book:[Shadows for Beginners]:1:1:none
+
+spell:Water Jet:0:3:35:6:0
+effect:SHORT_BEAM:WATER:4
+dice:$Dd8
+effect:TOUCH:KILL_TRAP
+expr:D:PLAYER_LEVEL:- 5 / 3 + 6
+msg_other: fires a short distance beam of pressurised water.
+desc:Fires a pressured jet of water that always hits its target from up to 4 tiles away.
+
+spell:Create Darkness:3:3:10:4:0
+effect:BLAST:DARK_WEAK:1:10
+dice:10
+effect:DARKEN_AREA
+desc:Darkens all squares in a level-dependent area. If you are in a room,
+desc: the entire room will be darkened as well.
+
+spell:Darkness Shots:5:3:10:4:0
+effect:BOW_BRAND:DARK:1
+dice:2
+effect:BOW_BRAND_SHOT:MON_BLIND
+dice:2
+effect:NOURISH:DEC_BY
+dice:1
+desc:Covers your missiles with darkness to add a blinding effect to your missiles.
+desc: This spell reduce your nourishment.
+
+spell:Summon Elemental:10:8:1:7:0
+cooldown:30
+effect:SUMMON:ELEMENTAL:0:100
+dice:2
+msg_other: summons a elemental.
+desc:Attempts to summon a elemental.
+desc: Cooldown 30 turns.
+
+spell:Shadow Shift:15:10:50:10:0
+effect:DAMAGE
+dice:2d5
+msg_self:shadow shifting
+effect:TELEPORT
+dice:30
+msg_other: shifts away.
+desc:Displaces your spirit a short distance, hurting your body as it is
+desc: dragged along.
+
+spell:Water Ball:16:18:25:0:0
+effect:BALL:WATER:2
+flag:BA_WATE
+dice:50+1d$S
+expr:S:PLAYER_LEVEL:* 5 / 2
+msg_other: fires a water ball.
+desc:Shoots a radius-2 or radius-3 water ball (#%d).
+
+spell:Water Ball Swarm:25:18:25:0:0
+effect:SWARM:WATER:1
+flag:BA_WATE
+dice:10+1d$S
+expr:S:PLAYER_LEVEL:* 5 / 2
+msg_other: fires a swarm of water balls.
+desc:Creates a Swarm of %d water balls each inflicting %s points of damage.
+
+
+spell:Tidal Wave:39:18:81:32:0
+effect:BALL:WATER:3
+dice:$B
+expr:B:BLAST_ELEMENT:+ 175
+msg_other: invokes a tidal wave.
+desc:Shoots a water ball.
+
+
+spell:Darkness Storm:45:27:75:75:0
+effect:BALL:DARK:3
+dice:$B+10d10
+expr:B:PLAYER_LEVEL:* 5
+msg_other: invokes a darkness storm.
+desc:Shoots a radius-3 darkness ball.
+
+spell:Hydrastorm:50:50:39:150:0
+cooldown:3
+effect:ARC:WATER:0:20
+dice:$B
+expr:B:PLAYER_LEVEL:* 7
+msg_other: invokes a high pressure cone of water.
+desc:Spews high pressure water in a long narrow cone from you.
+desc: Cooldown 3 turns.
+
+
+spell:Swarm of Darkness:50:50:40:150:0
+# testing note: won't work on the surface as number of Meteors depends of depth
+effect:SWARM:DARK:1
+dice:$B+m$M
+expr:B:PLAYER_LEVEL:* 3
+expr:M:DUNGEON_LEVEL:/ 30
+msg_other: fires a swarm of darkness meteors.
+desc:Shoots a swarm of 3 or 4 darkness meteors.
+desc: Meteors will travel until hitting a wall, a monster
+desc: or reaching the target location.
+desc: Meteors will explode as a radius-1 ball that does
+desc: damage to each monster in its area of effect.
+desc: If this kills the monster that blocked the path to the target
+desc: location, the next meteor may continue to find another target.
+
 ############### GHOST ###############
 # Hack -- not a real class, used for ghost realm spells
 name:Ghost

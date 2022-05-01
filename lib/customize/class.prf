@@ -360,3 +360,8 @@ class:Adventurer
 help:Jack of all trades, master of none... He knows a lot of stuff and has tried
 help: lots professions. Very versatile, but also very mediocre in every regard..
 help: ...though oftentimes better than master of one.
+
+class:Tidemaster
+help:A Tidemaster uses the power of darkness and water to defeat its enemies while
+help: using a enchanting a bow to use the powers of darkness. It can summon a elemental to aid it
+help: in combat later on.
