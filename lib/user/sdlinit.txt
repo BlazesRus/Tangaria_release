@@ -4,7 +4,7 @@ SoundVolume = 50
 MusicVolume = 50
 DefaultColor = 160,60,60
 StatusBarColor = 0
-NiceGraphics = 0
+NiceGraphics = 1
 Graphics = 1
 TileWidth = 4
 TileHeight = 2
@@ -17,7 +17,7 @@ Width = 1500
 Height = 889
 Keys = 1024
 WinBorders = 2
-FontSize = 22
+FontSize = 19
 Font = UbuntuMono-Bold.ttf
 
 Window = 1
