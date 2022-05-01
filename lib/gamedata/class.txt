@@ -8207,13 +8207,14 @@ dice:1
 desc:Covers your missiles with darkness to add a blinding effect to your missiles.
 desc: This spell reduce your nourishment.
 
-spell:Summon Elemental:10:8:1:7:0
-cooldown:30
-effect:SUMMON:ELEMENTAL:0:100
-dice:2
-msg_other: summons a elemental.
-desc:Attempts to summon a elemental.
-desc: Cooldown 30 turns.
+#Bug:Effect line needs fixed
+#spell:Summon Elemental:10:8:1:7:0
+#cooldown:30
+#effect:SUMMON::0:100#effect:SUMMON:ELEMENTAL:0:50#Elemental is a monster base not a monster(water vortex might work as replacement)
+#dice:2
+#msg_other: summons a elemental.
+#desc:Attempts to summon a elemental.
+#desc: Cooldown 30 turns.
 
 spell:Shadow Shift:15:10:50:10:0
 effect:DAMAGE
