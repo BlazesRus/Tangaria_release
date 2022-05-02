@@ -5008,7 +5008,6 @@ skill-shoot:40:30
 skill-dig:0:0
 hitdie:5
 equip:light:Wooden Torch:1:3:none
-equip:hafted:Whip:1:1:none
 equip:scroll:Word of Recall (rugged):2:2:birth_no_recall
 equip:scroll:Satisfy Hunger (tattered):2:2:birth_no_recall
 equip:scroll:Phase Door:3:4:birth_no_recall
