@@ -429,12 +429,6 @@ message:SUM_WRAITH:w
 # MSG_SUM_UNIQUE
 message:SUM_UNIQUE:w
 
-# MSG_SUM_BALL
-message:SUM_BALL:w
-
-# MSG_SUM_ELEMENTAL
-message:SUM_ELEMENTAL:w
-
 # MSG_WIELD
 message:WIELD:w
 
