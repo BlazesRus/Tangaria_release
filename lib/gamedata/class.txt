@@ -8155,13 +8155,12 @@ equip:scroll:Satisfy Hunger (tattered):2:2:birth_no_recall
 equip:scroll:Phase Door:3:4:birth_no_recall
 equip:potion:Cure Light Wounds:2:3:birth_no_recall
 value:0:STR[-3]
-value:0:INT[2]
-value:0:WIL[1]
+value:0:INT[3]
 value:0:CON[-2]
 value:0:CHR[-4]
 value:0:RES_DARK[1]
 value:0:RES_WATER[1]
-player-flags:0:ZERO_FAIL | CHOOSE_SPELLS | UNLIGHT | CAN_SWIM
+player-flags:0:ZERO_FAIL | CHOOSE_SPELLS | UNLIGHT | SUMMON_SPELLS
 title:Rookie
 title:Initiate
 title:Neophyte
@@ -8197,7 +8196,7 @@ effect:DARKEN_AREA
 desc:Darkens all squares in a level-dependent area. If you are in a room,
 desc: the entire room will be darkened as well.
 
-spell:Darkness Shots:5:3:10:4:0
+spell:Darkness Shots:5:4:10:4:0
 effect:BOW_BRAND:DARK:1
 dice:2
 effect:BOW_BRAND_SHOT:MON_BLIND
@@ -8207,13 +8206,52 @@ dice:1
 desc:Covers your missiles with darkness to add a blinding effect to your missiles.
 desc: This spell reduce your nourishment.
 
-spell:Summon Elemental:10:8:1:7:0
-cooldown:30
-effect:SUMMON:ELEMENTAL:0:100
+#POIS
+#spell:Toxic Moisture:33:20:75:24:0 --ref
+#effect:BALL:ICE:1
+#dice:$B
+#expr:B:PLAYER_LEVEL:* 3
+#effect:BALL:WATER:2
+#dice:$B
+#expr:B:PLAYER_LEVEL:* 2
+#effect:BALL:POIS:3
+#dice:$B
+#expr:B:PLAYER_LEVEL:* 2
+#msg_other: invokes a toxic storm.
+#desc:Shoots a radius-3 toxic ball. Each ball will do 1/3 damage from poison,
+#desc: 1/3 damage from water and 1/3 damage from ice.
+
+#effect:BLAST:FORCE:1
+
+#effect:BLAST:POIS:5
+
+#spell:Plasma Nova:30:15:32:40:0
+
+#effect:CURE:POISONED
+
+#effect:BLAST_OBVIOUS:AWAY_ALL:2:10
+
+#effect:BLAST:PLASMA:2
+#dice:$B
+#expr:B:PLAYER_LEVEL:* 5
+#msg_other: radiates a powerful wave of heat.
+#desc:Creates a fire ball around you.
+
+#desc:Unleases a high pressured blast of poisonous water that removes poison status from the user and pushes all targets in the blast radius away.
+
+spell:Summon Semi-Sentient Balls:10:4:1:7:0
+cooldown:6
+effect:NOURISH:DEC_BY
+dice:1
+effect:TIMED_INC_NO_RES:BLIND
+dice:1d2
+effect:SUMMON:BALL:0:1
 dice:2
-msg_other: summons a elemental.
-desc:Attempts to summon a elemental.
-desc: Cooldown 30 turns.
+msg_other: magically summons semi-sentient balls.
+desc:Attempts to summon up to two semi-sentient balls.
+desc: around you for some time. Makes you blind for a tiny moment.
+desc: You can use this skill once per 6 turns.
+desc: This spell reduce your nourishment.
 
 spell:Shadow Shift:15:10:50:10:0
 effect:DAMAGE
@@ -8233,6 +8271,34 @@ expr:S:PLAYER_LEVEL:* 5 / 2
 msg_other: fires a water ball.
 desc:Shoots a radius-2 or radius-3 water ball (#%d).
 
+spell:Summon Elemental:20:8:1:7:0
+cooldown:25
+effect:SUMMON:ELEMENTAL:0:100
+dice:1
+msg_other: summons a elemental.
+desc:Attempts to summon a elemental.
+desc: Cooldown 25 turns.
+
+# spell:name:level:mana:fail:exp:sproj
+
+spell:Mana Armour:21:35:60:100:0 
+effect:TIMED_INC:MANASHIELD
+dice:4+1d6
+dice:$B
+expr:B:PLAYER_LEVEL:+ 50
+effect:TIMED_INC:UNSUMMON_MINIONS
+dice:1
+effect:HEAL_HP
+dice:$B+m$M
+expr:B:PLAYER_LEVEL:+ 5
+expr:M:PLAYER_LEVEL:/ 3 + 12
+effect:TIMED_INC:BOLD
+dice:25+1d15
+effect:CURE:AMNESIA
+effect:CURE:AFRAID
+desc:Annihilate your minions and creates a mana shield that will protect you at as long as you have mana to fuel it.
+desc: Also heals you, and removes fear while providing resistant to it for some time.
+
 spell:Water Ball Swarm:25:18:25:0:0
 effect:SWARM:WATER:1
 flag:BA_WATE
@@ -8240,7 +8306,6 @@ dice:10+1d$S
 expr:S:PLAYER_LEVEL:* 5 / 2
 msg_other: fires a swarm of water balls.
 desc:Creates a Swarm of %d water balls each inflicting %s points of damage.
-
 
 spell:Tidal Wave:39:18:81:32:0
 effect:BALL:WATER:3
