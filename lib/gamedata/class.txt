@@ -8346,6 +8346,194 @@ desc: damage to each monster in its area of effect.
 desc: If this kills the monster that blocked the path to the target
 desc: location, the next meteor may continue to find another target.
 
+############### Beastal-Mage ###############
+name:Beastal Mage
+color:Y
+skill-disarm-phys:20:10
+skill-disarm-magic:20:10
+skill-device:32:10
+skill-save:28:10
+skill-stealth:1:0
+skill-search:12:12
+skill-melee:60:40
+skill-shoot:0:0
+skill-dig:10:0
+hitdie:10
+max-attacks:4
+min-weight:35
+strength-multiplier:4
+equip:light:Wooden Torch:1:3:none
+equip:sword:Main Gauche:1:1:none
+equip:scroll:Word of Recall (rugged):2:2:birth_no_recall
+equip:scroll:Satisfy Hunger (tattered):2:2:birth_no_recall
+equip:scroll:Phase Door:3:4:birth_no_recall
+equip:potion:Cure Light Wounds:2:3:birth_no_recall
+value:0:STR[1]
+value:0:INT[0]
+value:0:WIS[0]
+value:0:DEX[1]
+value:0:CON[1]
+value:0:CHR[-2]
+player-flags:0:ZERO_FAIL | SHAPECHANGE
+shape:0:novice mage
+title:Rookie
+title:Initiate
+title:Neophyte
+title:Novice
+title:Apprentice
+title:Journeyman
+title:Expert
+title:Adept
+title:Master
+title:Grandmaster
+
+magic:1:350:1
+
+book:nature book:town:[Lesser Charms]:6:nature
+book-graphics:?:y
+book-properties:1:30:25
+book-alloc:40:1 to 100
+book-desc:A nature book with a minor buffs.
+equip:nature book:[Lesser Charms]:1:1:none
+
+spell:Beast Mode:5:2:30:5:0
+effect:TIMED_INC:MON_POLY
+dice:25+1d25
+effect:TIMED_INC:MON_SPELLS
+dice:25+1d10
+desc:Attempts to temporarily transform into a random monsters to possibly access the powers of a beast
+
+spell:Sprint Boost:10:2:30:5:0
+power:5
+effect:TIMED_INC:SPRINT
+dice:50
+desc:speeds you up ({+10} to speed) for {50} turns and then slows you down
+desc: ({-10} to speed) for {50} extra turns
+
+book:nature book:dungeon:[Nature Craft]:6:nature
+book-graphics:?:o
+book-properties:40:30:20000
+book-alloc:15:40 to 100
+book-desc:An advanced nature book with a few verses.
+
+spell:Haste Self:25:12:65:15:0
+effect:TIMED_INC:FAST:0:5
+dice:$B+1d20
+expr:B:PLAYER_LEVEL:+ 0
+desc:Hastes you (+10 to speed) for a level-dependent duration.
+
+spell:Boost Vitality:35:70:90:90:0
+effect:RESTORE_STAT:CON
+power:5
+effect:TIMED_INC:CON
+dice:25+1d10
+
+desc:Restores all Constitution and boost Constitution for duration
+
+spell:See Invisible:40:70:90:90:0
+power:7
+effect:TIMED_INC:SINVIS
+dice:12+2d6
+effect:TIMED_INC:DETECT_INVISIBLE_MONSTERS
+effect-yx:22:40
+dice:12+2d6
+effect:CURE:BLIND
+power:6
+
+book:nature book:town:[Creature Dominion]:6:nature
+book-graphics:?:y
+book-properties:25:30:1600
+book-alloc:20:25 to 100
+book-desc:A standard nature book with a few verses.
+
+spell:Ancient Lore:22:30:80:20:0
+effect:IDENTIFY
+desc:Reveals an unknown rune on an object.
+
+############### Grey MAGE Placeholder ###############
+# specialisation: Debuff and Drain
+name:Grey Mage
+color:r
+skill-disarm-phys:35:9
+skill-disarm-magic:43:11
+skill-device:36:13
+skill-save:30:9
+skill-stealth:2:0
+skill-search:10:12
+skill-melee:35:15
+skill-shoot:20:15
+skill-dig:0:0
+hitdie:1
+max-attacks:4
+min-weight:40
+strength-multiplier:2
+equip:light:Wooden Torch:1:3:none
+equip:sword:Dagger:1:1:none
+equip:scroll:Word of Recall (rugged):2:2:birth_no_recall
+equip:scroll:Satisfy Hunger (tattered):2:2:birth_no_recall
+equip:scroll:Phase Door:3:4:birth_no_recall
+equip:potion:Cure Light Wounds:2:3:birth_no_recall
+value:0:STR[0]
+value:0:INT[2]
+value:0:WIS[0]
+value:0:CON[-2]
+value:0:CHR[-2]
+player-flags:0:ZERO_FAIL | BEAM | CHOOSE_SPELLS
+title:Novice
+title:Apprentice
+title:Trickster
+title:Illusionist
+title:Spellbinder
+title:Evoker
+title:Conjurer
+title:Magician
+title:Mage
+title:Arch-Mage
+
+magic:1:350:5
+
+############### Glacial Sorcerer Placeholder ###############
+# specialisation: Ice & Freeze
+name:Glacial Sorcerer
+color:r
+skill-disarm-phys:35:9
+skill-disarm-magic:43:11
+skill-device:36:13
+skill-save:30:9
+skill-stealth:2:0
+skill-search:10:12
+skill-melee:35:15
+skill-shoot:20:15
+skill-dig:0:0
+hitdie:1
+max-attacks:4
+min-weight:40
+strength-multiplier:2
+equip:light:Wooden Torch:1:3:none
+equip:sword:Dagger:1:1:none
+equip:scroll:Word of Recall (rugged):2:2:birth_no_recall
+equip:scroll:Satisfy Hunger (tattered):2:2:birth_no_recall
+equip:scroll:Phase Door:3:4:birth_no_recall
+equip:potion:Cure Light Wounds:2:3:birth_no_recall
+value:0:STR[0]
+value:0:INT[2]
+value:0:WIS[1]
+value:0:CON[0]
+value:0:CHR[0]
+player-flags:0:ZERO_FAIL | CHOOSE_SPELLS#StaffOnly
+title:Novice
+title:Apprentice
+title:Trickster
+title:Illusionist
+title:Spellbinder
+title:Evoker
+title:Conjurer
+title:Magician
+title:Mage
+title:Arch-Mage
+
+magic:1:350:5
+
 ############### GHOST ###############
 # Hack -- not a real class, used for ghost realm spells
 name:Ghost
