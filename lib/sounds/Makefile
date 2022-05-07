@@ -176,7 +176,18 @@ DATA = sound.cfg credits.txt \
     chop1.ogg                 chop2.ogg                 chop3.ogg \
     chop4.ogg                 chop5.ogg                 chop6.ogg \
     chop_tree_fall.ogg        sentry.ogg                door_broken.ogg \
-    silent.ogg \
+    silent.ogg                silent0.ogg               quiver.ogg \
+    item_pickup.ogg           gold_1.ogg                gold_2.ogg \
+    backpack_1.ogg            backpack_2.ogg            backpack_3.ogg \
+    backpack_4.ogg            backpack_5.ogg            backpack_6.ogg \
+    backpack_7.ogg            backpack_8.ogg            backpack_9.ogg \
+    backpack_10.ogg           backpack_11.ogg           backpack_12.ogg \
+    backpack_13.ogg           backpack_14.ogg           backpack_15.ogg \
+    backpack_16.ogg           backpack_17.ogg           backpack_18.ogg \
+    item_medium_armor.ogg     item_pickup_1.ogg         wilhelm-scream.ogg \
+    item_light_lantern_1.ogg  item_light_lantern_2.ogg  item_light_lamp_1.ogg \
+    item_light_lamp_2.ogg     item_light_phial_1.ogg    item_light_phial_2.ogg \
+    item_light_palantir_1.ogg item_light_palantir_2.ogg kill_unique_yaga.ogg \
     blind.mp3                 blind1.mp3                blind2.mp3 \
     confused.mp3              hypnotize.mp3             afraid.mp3 \
     cut.mp3                   hallucinate.mp3           paralyzed.mp3 \
@@ -194,6 +205,21 @@ DATA = sound.cfg credits.txt \
     chop1.mp3                 chop2.mp3                 chop3.mp3 \
     chop4.mp3                 chop5.mp3                 chop6.mp3 \
     chop_tree_fall.mp3        sentry.mp3                door_broken.mp3 \
-    silent.mp3
+    silent.mp3                silent0.mp3               quiver.mp3 \
+    item_pickup.mp3           gold_1.mp3                gold_2.mp3 \
+    backpack_1.mp3            backpack_2.mp3            backpack_3.mp3 \
+    backpack_4.mp3            backpack_5.mp3            backpack_6.mp3 \
+    backpack_7.mp3            backpack_8.mp3            backpack_9.mp3 \
+    backpack_10.mp3           backpack_11.mp3           backpack_12.mp3 \
+    backpack_13.mp3           backpack_14.mp3           backpack_15.mp3 \
+    backpack_16.mp3           backpack_17.mp3           backpack_18.mp3 \
+    item_medium_armor.mp3     item_pickup_1.mp3         wilhelm-scream.mp3 \
+    item_light_lantern_1.mp3  item_light_lantern_2.mp3  item_light_lamp_1.mp3 \
+    item_light_lamp_2.mp3     item_light_phial_1.mp3    item_light_phial_2.mp3 \
+    item_light_palantir_1.mp3 item_light_palantir_2.mp3 kill_unique_yaga.mp3 \
+    intro_1.ogg intro_2.ogg intro_3.ogg intro_4.ogg intro_5.ogg intro_6.ogg intro_7.ogg \
+    intro_1.mp3 intro_2.mp3 intro_3.mp3 intro_4.mp3 intro_5.mp3 intro_6.mp3 intro_7.mp3 \
+    destruction.ogg earthquake.ogg blast.ogg arc.ogg beam.ogg lash.ogg melee_blows.ogg strike.ogg project.ogg spot.ogg star.ogg touch.ogg \
+    destruction.mp3 earthquake.mp3 blast.mp3 arc.mp3 beam.mp3 lash.mp3 melee_blows.mp3 strike.mp3 project.mp3 spot.mp3 star.mp3 touch.mp3
 
 PACKAGE = sounds

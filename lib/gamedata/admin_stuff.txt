@@ -33,8 +33,8 @@ equip:potion:Experience:40
 #equip:reagent:Crafting Material:40
 #equip:reagent:Crafting Material:40
 #equip:reagent:Crafting Material:40
-equip:fortune cookie:Testing:40
-equip:fortune cookie:Testing:40
+#equip:fortune cookie:Testing:40
+#equip:fortune cookie:Testing:40
 #equip:potion:Philosopher's stone:40
 equip:ring:Speed:6
 equip:ring:Constitution:6
